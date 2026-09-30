@@ -1,0 +1,13 @@
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#eef2f7;background:#09111f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#162844,#09111f 55%);min-height:100vh}
+.page{width:min(920px,92%);margin:0 auto;padding:48px 0}.wide{width:min(1200px,94%)}
+.hero{text-align:center;padding:25px 0 30px}.badge{display:inline-block;padding:7px 12px;border:1px solid #38506e;border-radius:999px;font-size:12px;letter-spacing:1.5px;color:#8fc7ff}
+h1{font-size:clamp(34px,6vw,62px);line-height:1.02;margin:16px 0}.hero p{color:#aebbd0;font-size:18px;max-width:680px;margin:auto}
+.card{background:rgba(17,29,48,.9);border:1px solid #243957;border-radius:18px;padding:26px;margin:18px 0;box-shadow:0 18px 50px rgba(0,0,0,.2)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{font-weight:650;color:#dce7f5;display:flex;flex-direction:column;gap:8px}
+input,select,textarea{width:100%;border:1px solid #36506e;background:#0c1829;color:#fff;border-radius:10px;padding:12px;font:inherit}
+textarea{resize:vertical}.full{grid-column:1/-1}.primary,.danger{border:0;border-radius:10px;padding:12px 18px;font-weight:750;cursor:pointer}.primary{background:#61b7ff;color:#06111e}.primary:hover{filter:brightness(1.08)}
+.danger{background:#7b2733;color:#fff}.topbar{display:flex;justify-content:space-between;align-items:center;gap:20px}.topbar a,footer a{color:#9ed3ff;text-decoration:none}
+.profile{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.profile span{display:block;color:#879ab4;font-size:12px;text-transform:uppercase;letter-spacing:.8px}.profile strong{display:block;margin-top:4px}
+.plan{white-space:pre-wrap;word-break:break-word;background:#08111e;border-radius:12px;padding:18px;line-height:1.55;overflow:auto}.compact{max-height:430px}.tip{border-left:4px solid #61b7ff}.muted{color:#9bacbf}.alert{padding:12px 15px;border-radius:10px;margin-bottom:15px}.error{background:#431f2a;color:#ffd8df}.success{background:#173a2b;color:#c8ffe0}.admin-card{margin-bottom:22px}.admin-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}footer{text-align:center;color:#8092a9;padding:25px}
+@media(max-width:700px){.grid,.profile{grid-template-columns:1fr}.full{grid-column:auto}.page{padding:25px 0}.admin-head{flex-direction:column}}

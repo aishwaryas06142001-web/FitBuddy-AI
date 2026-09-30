@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitBuddy — Your Plan</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<main class="page">
+  <header class="topbar"><a href="/">← New plan</a><a href="/view-all-users">Dashboard</a></header>
+  {% if message %}<div class="alert success">{{ message }}</div>{% endif %}
+
+  <section class="card profile">
+    <div><span>Name</span><strong>{{ user.name }}</strong></div>
+    <div><span>User ID</span><strong>{{ user.user_id }}</strong></div>
+    <div><span>Age</span><strong>{{ user.age }}</strong></div>
+    <div><span>Weight</span><strong>{{ user.weight }} kg</strong></div>
+    <div><span>Goal</span><strong>{{ user.goal|title }}</strong></div>
+    <div><span>Intensity</span><strong>{{ user.intensity|title }}</strong></div>
+  </section>
+
+  <section class="card">
+    <h2>{{ "Updated Workout Plan" if plan.updated_plan else "Your 7-Day Workout Plan" }}</h2>
+    <pre class="plan">{{ plan.updated_plan or plan.original_plan }}</pre>
+  </section>
+
+  <section class="card tip">
+    <h2>Nutrition / Recovery Tip</h2>
+    <p>{{ plan.nutrition_tip }}</p>
+  </section>
+
+  <section class="card">
+    <h2>Refine your plan</h2>
+    <p class="muted">Examples: “more focus on cardio”, “include more rest days”, or “add yoga”.</p>
+    <form action="/submit-feedback" method="post">
+      <input type="hidden" name="user_id" value="{{ user.user_id }}">
+      <textarea name="feedback" required minlength="5" maxlength="2000" rows="5" placeholder="Tell FitBuddy what you want changed..."></textarea>
+      <button class="primary" type="submit">Update Plan with AI</button>
+    </form>
+  </section>
+</main>
+</body>
+</html>
